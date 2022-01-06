@@ -142,6 +142,7 @@ class Ui_MainWindow(object):
 
         if(os.path.exists(self.cfg) == False):
             self.modify_cfg('DEFAULT','db','tournament_stats.db')
+            self.db = 'tournament_stats.db'
         else:
             db_path = self.fetch_cfg('DEFAULT', 'db')
             if os.path.exists(db_path):
@@ -439,3 +440,5 @@ def run_UI():
     MainWindow.show()
     sys.exit(app.exec_())
 
+if __name__ == "__main__":
+    run_UI()
